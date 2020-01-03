@@ -1,0 +1,40 @@
+##### 一.创建git空库  
+步骤如下  
+###### 1.开始--git--git bash  
+###### 2.cd 去想要创建库的地址下面，创建一个空库。命令：mkdir 库名   
+例如cd d:/user  mkdir newku.这样就在user下面创建了一个名为newku的空库  
+如果使用这个命令之后，库里面没有.git这个文件。那么可以在库址下执行：git init命令，就会生成这个文件。  
+##### 二：在git库中添加文件
+命令：git add filename  
+例如：在nuwku中添加globle.py文件。首先打开git bash，然后cd 到nuwku的位置；最后执行 git add globle.py  
+##### 三：提交添加的文件  
+命令：git commit -m "massage"  
+massage为提交的说明、备注，如果不加-m "massage" 可能有问题，引发的问题待定  
+
+
+##### git add 就是把工作区的修改，提交到暂存区
+
+##### git commit 把暂存区的修改，保存至本地库
+
+##### git push 把本地库的记录，推送至远程库  
+
+##### 查看git状态，看是否有修改的文件  
+1.命令：git status  查看有哪些文件做了修改  
+2.命令：git diff 查看文件具体详细的修改  
+
+##### 四：git版本回退、指定回到某个版本  
+1.查看git文件修改记录，以便选择要回到哪个版本  
+命令：git log ，查看git文件版本历史记录  
+2.选择回退到的版本  
+命令：git reset --hard HEAD^ 回到上一个版本  
+git reset --hard HEAD^^回到上上一个版本  
+HEAD后面的“^”的数量，代表要往上回去的版本个数，太多的话，可以写成 git reset --hard HEAD~56,即往上回到第56个版本  
+3.查看详细的历史版本和版本号和各版本commit id，以便可以回退到具体的某个版本  
+命令：git reflog  
+4.由3可以得知各个版本详细的版本，例如知道了某版本的commit id，可以会退到这个版本  
+命令：git reset hard HEAD dweh(commit id)
+
+
+
+
+
