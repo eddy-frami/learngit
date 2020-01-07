@@ -1,0 +1,23 @@
+##### 1.标签理解  
+标签实质是指向某次commit的指针。“请把上周一的那个版本打包发布，commit号是6a5819e...”这种根据commit号来操作，比较繁琐难记。假如在某次commit时打一个标签v-1，标志这次commit时版本号是v-1。下次可以直接按照版本号来找这次的commit。  
+##### 2.创建标签  
+命令：git tag v1.0  
+首先切换到要打标签的分支上，git branch master  
+然后打一个标签，git tag v1.0  
+##### 3.查看所有标签 
+命令：git tag  
+##### 4.在历史某次commit上打标签  
+默认是打在最新的commit上的。如果想要在历史某次commit上打一个标签，需要知道那次commit的id号  
+步骤1：git log --pretty=oneline --abbrev-commit获取历史commit的id号  
+步骤2：对特定的commit打标签，git tag v2.0 commit号  
+##### 4.删除标签  
+###### 删除本地标签  
+命令：git tag -d v1.0  
+###### 删除远程标签  
+步骤1：先删除本地标签git tag -d v1.0  
+步骤2：删除远程标签git push origin :refs/tags/v1.0  
+##### 5.推送标签到远程  
+命令：git push origin v1.0   ：
+一次推送所有标签到远程  
+命令：git push origin --tags  
+

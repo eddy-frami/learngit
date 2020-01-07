@@ -1,0 +1,47 @@
+##### 1.创建分支  
+###### 本地创建分支  
+命令：git branch dev  创建dev分支。  
+？这里是在哪个区创建的dev分支？工作区、缓存区？创建分支是所有区域都创建了分支。  
+###### 创建远程分支：  
+1.先本地创建分支 git branch dev  
+2.然后将本地创建的分支，push到远程库 git push origin dev  
+###### 从远程库拉取本地没有的某分支  
+命令:git chechout -b dev origin/dev
+##### 2.从原来的master分支，切换到dev分支  
+命令：git checkout dev  
+理解：git checkout filename，是将缓存区的filename，复制并替代原先工作区的内容。  
+？这里切换分支，是否是一样的理解。将缓存区的dev分支，复制并替代工作区的原先的master代码内容？  
+##### 1和2可以合并成一个命令：git checkout -b dev  
+
+##### 3.查看分支  
+查看本地分支  
+命令：git branch  
+查看远程分支  
+命令：git branch -r  
+###### 对比查看远程库命令：git remote 或者查看远程库详细信息：git remote -v  
+查看所有分支：  
+命令：git granch -a
+##### 4.从dev分支，合并到原master分支  
+命令：git merge dev。git merge命令，用于合并某分支到当前分支。首先你要在要合并的主分支上。  
+首先，在当前dev分支上做一些修改，并commit到本地库。  
+步骤1：先在dev分支工作区对文件a做一些修改，然后git add a 提交到缓存区，然后git commit -m "massage"到本地库  
+步骤2：然后切换到原先的master分支，查看工作区文件内容，是否与刚刚在dev修改的文件内容有区别。git checkout master切换到master分支，发现工作区文件的内容已经与dev修改的文件不一样了。  
+步骤3：git merge dev。合并dev分支到当前分支。合并成功之后，再去工作区查看master分支工作区的文件内容，可以看到已经和修改后的dev分支一样了。  
+##### 5.删除分支  
+###### 删除本地某分支  
+命令：git branch -d dev,删除dev分支  
+删除分支后，再查看git里面的分支，git branch，发现只有master分支，没有dev分支了  
+###### 删除远程某分支  
+命令：git push origin -d dev
+
+##### 最新版的git，切换分支可以用git checkout dev命令，也支持使用git swich dev命令  
+1.git branch dev，创建dev分支  
+2.git swich dev，切换到dev分支  
+1和2可以合并成一条命令，创建并切换到dev分支：git swich -c dev（对比使用chechout命令，git checkout -b dev,创建并切换到dev分支）（可以这样理解，swich -c ,c为create创建；checkout -b,b为branch分支）  
+###### 加深理解
+###### git branch dev 创建分支
+###### git checkout dev 或者 git swich dev  切换分支  
+###### git checkout -b dev 或者 git swich -c dev 创建并切换分支  
+###### git branch 查看分支  
+###### git merge dev 合并dev分支到当前分支  
+###### git branch -d dev 删除dev分支

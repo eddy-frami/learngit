@@ -1,0 +1,14 @@
+##### 以具体场景来演示：  
+######  1.新建分支f，f有一行内容Creating a new branch is quick and simple.  
+###### 2.修改master分支，新加一行Creating a new branch is quick & simple.  
+###### 3.合并f到master。发现合并冲突  
+###### 4.修改master，将原先的Creating a new branch is quick & simple.改成和f一致：Creating a new branch is quick and simple.  
+###### 5.重新合并
+
+
+只要合并的两个分支，新的分支不是单纯的新增内容；而是各自都有修改，那么合并的时候就会发生冲突。解决思路是，一定要将不一致的地方改成一致  
+
+#####   会发生冲突的前提:
+  个人都修改了同一个文件的内容才会引发冲突，而不是因为合并了2个不同的分支会引发冲突。
+
+事实上，再共同开发过程中，由于大家进行的不是相同的开发任务，只要约定某些公用的文件不去提交本地的修改，大多数情况下合并都不会有冲突

@@ -1,0 +1,32 @@
+现在的情景是，你已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这两个仓库进行远程同步，这样，GitHub上的仓库既可以作为备份，又可以让其他人通过该仓库来协作  
+  
+本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，因此需要设置一下连接信息  
+  
+  1.新建ssh key，具体步骤https://segmentfault.com/a/1190000004564905  
+  2.github登录地址 https://github.com/  
+  3.在git bash里面运行git remote add origin git@github.com:michaelliao/learngit.git  
+  
+    
+###### 从本地git关联远程库github，并将代码推到远程库中  
+  要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；  
+  
+######   已经有远程库，将github信息同步至本地git  
+首先在github中建立一个新库，建立时勾选Initialize this repository with a README  
+  
+  打开git bash，cd到本地想要建立库的地址，使用命令：git clone git@server-name:path/repo-name.git。这样远程库中的代码信息，就同步至本地git中。  
+  
+    
+######     由github远程库同步信息至本地git库，不仅可以用库名，还可以用http  
+git clone https://github.com/suyun/mypython  
+
+###### 注意：如果创建github远程库的时候，勾选了Initialize this repository with a README。意思是用readme这个文件初始化初始化远程库。这样远程库就不为空。当本地文件推到远程库的时候，就会报错：  
+Updates were rejected because the remote contains work that you do not have locally  
+
+###### 解决办法是，现将远程库的内容拉取到本地，使用git pull --rebase origin master。然后再把本地的文件推送到远程库。git push -u origin master
+  
+  
+  
