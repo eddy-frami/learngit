@@ -1,0 +1,21 @@
+Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)
+
+工作区>>>>暂存区>>>>本地仓库>>>>远程仓库
+
+git add把文件从工作区>>>>暂存区，git commit把文件从暂存区>>>>本地仓库，git push把本地仓库的数据推到远程仓库
+
+git diff查看工作区和暂存区差异，
+
+git diff --cached查看暂存区和仓库差异，
+
+git diff HEAD 查看工作区和仓库的差异，
+
+git add的反向命令git checkout，撤销工作区修改，即把暂存区最新版本转移到工作区，放弃对工作区中某文件的修改，即 将工作区中该文件的状态恢复到该文件上次提交到暂存区时的状态。  
+用法：git checkout filename  
+对比切换分支命令：git chechout dev ,切换到dev分支；git checkout -b dev ,创建并切换到dev分支
+
+git commit的反向命令git reset HEAD，就是把仓库最新版本转移到暂存区。  
+用法：git reset HEAD filename  
+  
+rm 只删除工作区的文件  
+git rm filename 一次删除工作区和暂存区的文件，删除之后需要commit；如果没有commit，还可以用git reset HEAD filename从本地库中还原至缓存区    
