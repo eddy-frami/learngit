@@ -1,0 +1,5 @@
+##### 1.给命令配置别名  
+命令：git config --global alias.别名 命令  
+例如：用st 代替 status。git config --globle alias.st status ,之后git status就可以写成git st  
+##### 2.删除别名  
+每个仓库的Git配置文件都放在.git/config文件中：别名就在[alias]后面，要删除别名，直接把对应的行删掉即可
